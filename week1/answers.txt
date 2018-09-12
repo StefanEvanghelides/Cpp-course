@@ -3,5 +3,13 @@ Exercise 1:
     Commands to compile:
         - g++ -std=c++17 -Wall -Werror -o hello.o -c hello.cc
         - g++ -std=c++17 -Wall -Werror -s hello.o -o hello
-    
-    
+    File sizes:
+        - iostream: 2695 bytes
+        - hello.o: 2528 bytes
+        - hello.out: 14368 bytes
+    Object file description:
+        An object file is the compilers output and contains compiled code.
+    Executable file description:
+        An executable file is a file that is outputted after the linker step. This file can be executed. 
+    Program output:
+        Hello world!\n
