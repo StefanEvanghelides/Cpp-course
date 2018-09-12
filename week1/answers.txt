@@ -1,0 +1,7 @@
+Exercise 1:
+    Listing
+    Commands to compile:
+        - g++ -std=c++17 -Wall -Werror -o hello.o -c hello.cc
+        - g++ -std=c++17 -Wall -Werror -s hello.o -o hello
+    
+    
