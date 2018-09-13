@@ -7,11 +7,11 @@ void output_odd_even(size_t number)
 {
     size_t value = std::numeric_limits<size_t>::max() - 1;
 
-    cout << (number == ((number / 2) * 2) ? "odd" : "even") << "\n";
+    cout << (number != ((number / 2) * 2) ? "odd" : "even") << "\n";
     cout << (number & 1 ? "odd" : "even") << "\n";
     cout << (number % 2 ? "odd" : "even") << "\n";
     cout << (number << (sizeof(size_t) * 8 - 1) ? "odd" : "even") << "\n";
-    cout << (~((number ^ (value + 1)) | (value)) ? "odd" : "even") << "\n";
+    cout << (((number | value) ^ value) ? "odd" : "even") << "\n";
 }
 
 int main()
