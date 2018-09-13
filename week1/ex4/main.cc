@@ -3,11 +3,11 @@
 using namespace std;
 
 char const str[] =
-R"(^\\s+Encryption key:(\\w+)
-^\\s+Quality=(\\d+)
-^\\s+E?SSID:\"([[:print:]]+)\"
-^\\s+ssid=\"([[:print:]]+)\"
-)";
+R"delim(^\s+Encryption key:(\w+)
+^\s+Quality=(\d+)
+^\s+E?SSID:\"([[:print:]]+)"
+^\s+ssid=\"([[:print:]]+)"
+)delim";
 
 int main()
 {
