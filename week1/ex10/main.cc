@@ -10,17 +10,14 @@ int main(int argc, char *argv[])
     size_t replacement = stoul(argv[3]) % 16;   // new nibble (= 0 .. 15)
 
 
-    size_t clearMask = 15 << nibble*4; //Generate a bitmask with ones at the location of the
-    										//to be adjusted nibble.
+    size_t clearMask = 15 << nibble*4; //bitmask used to clear the to be adjusted nibble
 
     value = ~value; //Invert all bits in value
-    value |= clearMask; //Make sure all bits of the to be adjusted nibble are set to 1
+    value |= clearMask; //Overwrite the to be adjusted nibble with ones
     value = ~value; //Invert all bits again, the bits in the to be adjusted nibble are now 0
     					// all other bits are unaffected
 
-    value = value | replacement << nibble*4; //Set the bits to be adjusted nibble to the correct value,
-    											// by using bit or with the replacement nibble bitshifted
-    											// to the correct location
+    value = value | replacement << nibble*4; //Set the to be adjusted nibble to the new value
 
     cout << hex << value << '\n';       // show the new value
 }
