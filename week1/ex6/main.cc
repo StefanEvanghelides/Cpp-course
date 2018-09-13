@@ -5,16 +5,16 @@ using namespace std;
 
 void output_odd_even(size_t number)
 {
-    size_t helper = std::numeric_limits<size_t>::max();
+    size_t value = std::numeric_limits<size_t>::max() - 1;
 
-    cout << (number - ((number / 2) * 2) ? "odd" : "even") << "\n";
+    cout << (number == ((number / 2) * 2) ? "odd" : "even") << "\n";
     cout << (number & 1 ? "odd" : "even") << "\n";
     cout << (number % 2 ? "odd" : "even") << "\n";
     cout << (number << (sizeof(size_t) * 8 - 1) ? "odd" : "even") << "\n";
-    cout << (~((number ^ helper) | (helper - 1)) ? "odd" : "even") << "\n";
+    cout << (~((number ^ (value + 1)) | (value)) ? "odd" : "even") << "\n";
 }
 
-int main(int argv, char** argc)
+int main()
 {
     cout << "inputting 25\n";
     output_odd_even(25);

@@ -9,7 +9,7 @@ R"(^\\s+Encryption key:(\\w+)
 ^\\s+ssid=\"([[:print:]]+)\"
 )";
 
-int main(int argv, char** argc)
+int main()
 {
     std::cout << str;
 }
