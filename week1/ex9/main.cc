@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//Bit-field containing 11 values as of varying bit-size
+//Bit-field containing 11 values of varying bit-size
 struct bitValues {
 	unsigned int b0 : 1;
 	unsigned int b1 : 3;
