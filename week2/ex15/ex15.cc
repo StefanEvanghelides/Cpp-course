@@ -26,6 +26,5 @@ int main()
         empty_lines = 1;
 
         cout << line;
-        
     }
 }
