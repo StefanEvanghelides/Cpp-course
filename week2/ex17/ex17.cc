@@ -17,14 +17,13 @@ int main(int argc, char *argv[])
 
 	size_t newValue;
 	if (!direction.compare("ror"))
-		newValue = value >> 1 | value << input.length() - 1; 
+		newValue = ~(~(value >> 1 | value << input.length() - 1) | ~((1 << input.length()) - 1)); 
 		//Shift 1 to the right and place the least significant bit at the correct location
+		//Note that left shifting introduces bits outside the original bit-range which are removed
 	else if (!direction.compare("rol"))
-		newValue = value << 1 | value >> input.length() -1 ;
+		newValue = ~(~(value << 1 | value >> input.length() -1) | ~((1 << input.length()) - 1));
 		//Shift 1 to the left and place the most signicant bit at the correct location
-
-	newValue = ~(~newValue | ~((1 << input.length()) - 1)); 
-	//clear all bits shifted outside of the original bit-range
+		//Note that left shifting introduces bits outside the original bit-range which are removed
 
 	for (size_t idx = input.length(); idx--;) //Iterate through all bits from most to least significant
 	{
