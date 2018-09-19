@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 	string sentence;
 	const string& whiteCharacters = " \t";
 
-	while(!cin.eof())
+	while (!cin.eof())
     {
 		getline(cin, sentence);
 

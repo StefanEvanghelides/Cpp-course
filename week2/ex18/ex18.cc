@@ -22,29 +22,29 @@ int main()
         switch (instruction[0])
         {
             case 's':
-                if(instruction == "sto")
+                if (instruction == "sto")
                     value = number;
-                else if(instruction == "sub")
+                else if (instruction == "sub")
                     value -= number;
                 else
                     cout << "No instruction '" << instruction << "'\n";
             break;
             case 'a':
-                if(instruction == "add")
+                if (instruction == "add")
                     value += number;
                 else
                     cout << "No instruction '" << instruction << "'\n";
             break;
             case 'm':
-                if(instruction == "mul")
+                if (instruction == "mul")
                     value *= number;
                 else
                     cout << "No instruction '" << instruction << "'\n";
             break;
             case 'd':
-                if(instruction == "div")
+                if (instruction == "div")
                 {
-                    if(number == 0)
+                    if (number == 0)
                         cout << "Error: Cannot divide by zero.\n";
                     else
                         value /= number;
