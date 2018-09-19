@@ -10,31 +10,21 @@ int main(int argc, char **argv)
 
 	while(!cin.eof())
     {
-      getline(cin, sentence);
-      
-      if (sentence.empty())
-      { // If the sentence is empty, there is nothing to process/output
-      	continue;
-      }
+		getline(cin, sentence);
 
-      // Trim the strings from starting and ending whitespaces
-      sentence.erase(0, sentence.find_first_not_of(whiteCharacters));
-      sentence.erase(sentence.find_last_not_of(whiteCharacters) + 1);
+		if (sentence.empty())
+		{ // If the sentence is empty, there is nothing to process/output
+			continue;
+		}
 
-			size_t firstIdx = sentence.find_first_of(whiteCharacters);
-			size_t lastIdx = sentence.find_last_of(whiteCharacters);
+		// Trim the strings from starting and ending whitespaces
+		sentence.erase(0, sentence.find_first_not_of(whiteCharacters));
+		sentence.erase(sentence.find_last_not_of(whiteCharacters) + 1);
 
-			string firstWord = sentence.substr(0, firstIdx);
-			string lastWord = sentence.substr(lastIdx + 1);
 
-			sentence.replace(lastIdx + 1, firstIdx, firstWord);
-			if (lastWord.length() > firstWord.length())
-			{ // If the final word is too big, erase the extra characters
-				sentence.erase(lastIdx + 1 + firstIdx);
-			}
-			sentence.replace(0, firstIdx, lastWord);
+		sentence = sentence.substr(sentence.find_last_of(whiteCharacters) + 1, string::npos) + sentence.substr(sentence.find_first_of(whiteCharacters), string::npos);
 
-			cout << sentence << endl;
+		cout << sentence << endl;
     }
 
 }
