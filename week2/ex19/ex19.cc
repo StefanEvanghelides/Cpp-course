@@ -20,19 +20,21 @@ int main(int argc, char *argv[])
 
 	while (true)
 	{
-		size_t remainder = number % base;					//Determine the value of the next digit
+		size_t remainder = number % base;	//Get the value of the next digit
 
-		if (remainder > 9)									//If the digit is 10 or larger
-			remainder = START_ALPHA + remainder - 10;		//Set it to the value of the corrosponding ASCII letter
-		else
-			remainder += START_NUM;							//Otherwise to the value of the corrosponding ASCII number
+		//Set remainder to the corrosponding ASCII symbol
+		if (remainder > 9)								
+			remainder = START_ALPHA + remainder - 10;	
+		else																				
+			remainder += START_NUM;	
 
-		outcome.insert(outcome.begin(), char(remainder));	//Prepend character to the outcome
+		outcome.insert(outcome.begin(), char(remainder));	
+		//Prepend character to the outcome
 
-		number /= base;										//Reduce the number for the next digit
+		number /= base;						//Reduce the number for the next digit
 
-		if (number == 0)									//If the program is done
-			break;											//Exit the loop
+		if (number == 0)					//If the program is done
+			break;									//Exit the loop
 	}
 
 	cout << outcome << '\n';

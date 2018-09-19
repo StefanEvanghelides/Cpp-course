@@ -6,8 +6,10 @@ using namespace std;
 int main()
 {
     string line;
-    while (getline(cin, line))       // Read the whitespace head
-        if (line.find_first_not_of(" \t") != string::npos) //if string is not empty head is cleared.
+    while (getline(cin, line))      // Read the whitespace head
+        
+        //if string is not empty head is cleared.
+        if (line.find_first_not_of(" \t") != string::npos) 
         {
             cout << line;
             break;
@@ -16,7 +18,8 @@ int main()
     size_t empty_lines = 1;
     while (getline(cin, line))
     {
-        if (line.find_first_not_of(" \t") == string::npos) //if string empty
+        //if string empty
+        if (line.find_first_not_of(" \t") == string::npos)
         {
             empty_lines += 1;
             continue;
