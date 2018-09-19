@@ -22,7 +22,7 @@ int main()
             continue;
         }
 
-        cout << string(empty_lines, '\n');
+        cout << string(empty_lines, '\n'); //Output the empty lines
         empty_lines = 1;
 
         cout << line;

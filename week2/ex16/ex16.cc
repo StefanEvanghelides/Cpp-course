@@ -8,8 +8,7 @@ int main(int argc, char *argv[])
 
 	size_t max = 1 << argc; 
 
-	//Iterate upto a number constructed using 1 bit for every command line argument
-	//all of which have the value 1;
+	//Iterate upto the largest number constructed using 1 bit for every command line argument.
 	//Each of the bits now represents 1 of the command line (CL) arguments.
 	//When it is set to 1 in an iteration its corrosponding CL argument
 	//is printed.
