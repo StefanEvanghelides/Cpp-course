@@ -18,7 +18,6 @@ int main()
 
         string instruction = line.substr(0, line.find(' '));
         int number = stoi(line.substr(line.find(' ') + 1));
-        std::cout << "instruction: '" << instruction << "', number: '" << number << "'\n";
 
         switch (instruction[0])
         {
