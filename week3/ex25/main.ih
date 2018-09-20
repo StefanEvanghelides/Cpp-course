@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+using namespace std;
+
+void fillFerry(string &ferry, size_t size);
+void insertPerson(string &ferry, size_t number);
