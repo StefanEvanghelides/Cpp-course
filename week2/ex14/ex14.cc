@@ -22,7 +22,10 @@ int main(int argc, char **argv)
 		sentence.erase(sentence.find_last_not_of(whiteCharacters) + 1);
 
 		//Replace the first word with the last word
-		sentence = sentence.substr(sentence.find_last_of(whiteCharacters) + 1, string::npos) + sentence.substr(sentence.find_first_of(whiteCharacters), string::npos);
+		sentence = sentence.substr(
+			sentence.find_last_of(whiteCharacters) + 1, string::npos) 
+			+ sentence.substr(
+			sentence.find_first_of(whiteCharacters), string::npos);
 
 		cout << sentence << endl;
     }
