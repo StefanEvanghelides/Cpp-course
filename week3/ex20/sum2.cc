@@ -1,6 +1,11 @@
 #include "main.ih"
 
-double sum(double a, double b)
+double sum(double *values, size_t numEl)
 {
-	return a + b;
+	double sum = 0;
+
+	for (size_t idx = 0; idx != numEl; ++idx)
+		sum += values[idx];
+
+	return sum;
 }

@@ -8,7 +8,8 @@ namespace Icmbuild
     extern char author[];
 };
 
-int sum(int a, int b); //sum 1
-double sum(double a, double b); //sum 2
-
 using namespace std;
+
+int sum(int *values, size_t numEl); //sum 1
+double sum(double *values, size_t numEl); //sum 2
+

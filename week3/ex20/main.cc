@@ -2,17 +2,34 @@
 
 int main(int argc, char **argv)
 try
-{
-	for (size_t idx = 1; idx != argc ; ++idx)
+{	
+	for (int idx = 1; idx != argc ; ++idx)
 	{
 		if (string{argv[idx]}.find('.') != string::npos)
 		{	
-			cout << sum(stod(argv[1]),stod(argv[2])) << '\n';
+			double inputVal[argc - 1];
+			
+			for (int idx = 1; idx != argc ; ++idx)
+			{
+				inputVal[idx - 1] = stod(argv[idx]);
+			}
+
+			cout << sum(inputVal, argc - 1) << '\n' << '\n';
 			return 0;
 		}
 	}
+
+	int inputVal[argc - 1]; 
+
+	for (int idx = 1; idx != argc ; ++idx)
+	{
+		inputVal[idx - 1] = stoi(argv[idx]);
+	}
+
+
+
 	//return int
-	cout << sum(stoi(argv[1]),stoi(argv[2])) << '\n';
+	cout << sum(inputVal, argc - 1) << '\n';
 }
 catch (...)
 {
