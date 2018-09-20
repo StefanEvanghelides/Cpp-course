@@ -18,7 +18,7 @@ struct ReturnValues
 	string value;	
 };
 
-ReturnValues combine(int reqNr, int argc, char **argv);
+ReturnValues combine(int argc, char **argv);
 bool structCall(int argc, char **argv);
 void boundCall(int argc, char **argv);
 

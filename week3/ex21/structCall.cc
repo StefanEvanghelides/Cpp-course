@@ -2,7 +2,7 @@
 
 bool structCall(int argc, char **argv)
 {
-	ReturnValues result = combine(1, argc , argv);
+	ReturnValues result = combine(argc , argv);
 
 	if (result.ok)
 		cout << result.nr << ' ' << result.value << '\n';
