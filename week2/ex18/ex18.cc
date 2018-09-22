@@ -3,10 +3,20 @@
 
 using namespace std;
 
+enum NumValue                           // Values of the commands in base 36.
+{
+	STO = 37356,
+	ADD = 13441,
+	SUB = 37379,
+	MUL = 29613,
+	DIV = 17527,
+	RET = 35525
+};
+
 int main()
 {
 
-    int value = 0;
+    int stored = 0;
 
     while (true)
     {
@@ -14,48 +24,38 @@ int main()
         string line;
         getline(cin, line);
 
-        if(line == "ret") return 0;
+        if (line == "ret") return 0;
 
-        string instruction = line.substr(0, line.find(' '));
-        int number = stoi(line.substr(line.find(' ') + 1));
+        //convert the command to a number in base 36, base 36 because the highest
+        //  single digit number is then 'z'.
+        int value = stoi(line.substr(line.find(' ') + 1));
 
-        switch (instruction[0])
+        switch (stoul(line.substr(0, line.find(' ')), 0, 36))
         {
-            case 's':
-                if (instruction == "sto")
-                    value = number;
-                else if (instruction == "sub")
-                    value -= number;
-                else
-                    cout << "No instruction '" << instruction << "'\n";
+            case STO:
+                stored = value;
             break;
-            case 'a':
-                if (instruction == "add")
-                    value += number;
-                else
-                    cout << "No instruction '" << instruction << "'\n";
+            case ADD:
+                stored += value;
             break;
-            case 'm':
-                if (instruction == "mul")
-                    value *= number;
-                else
-                    cout << "No instruction '" << instruction << "'\n";
+            case SUB:
+                stored -= value;
             break;
-            case 'd':
-                if (instruction == "div")
+            case MUL:
+                stored *= value;
+            break;
+            case DIV:
+                if(value == 0)
                 {
-                    if (number == 0)
-                        cout << "Error: Cannot divide by zero.\n";
-                    else
-                        value /= number;
+                    std::cout << "Error: cannot divide by zero.\n";
+                    break;
                 }
-                else
-                    cout << "No instruction '" << instruction << "'\n";
+                stored /= value;
             break;
             default:
-                cout << "No instruction '" << instruction << "'\n";
+                cout << "Invalid command";
             break;
         }
-        cout << "Result: " << value << "\n";
+        cout << "Result: " << stored << "\n";
     }
 }

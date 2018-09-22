@@ -8,18 +8,15 @@ int main(int argc, char **argv)
 	string sentence;
 	const string& whiteCharacters = " \t";
 
-	while (!cin.eof())
+	while (getline(cin, sentence))
     {
-		getline(cin, sentence);
-
-		if (sentence.empty())
-		{ // If the sentence is empty, there is nothing to process/output
-			continue;
-		}
-
 		// Trim the strings from starting and ending whitespaces
 		sentence.erase(0, sentence.find_first_not_of(whiteCharacters));
 		sentence.erase(sentence.find_last_not_of(whiteCharacters) + 1);
+		
+		// If the sentence is empty, there is nothing to process/output
+		if (sentence.empty())
+			continue;
 
 		//Replace the first word with the last word
 		sentence = sentence.substr(

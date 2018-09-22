@@ -5,9 +5,9 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    if (argc == 2 && string(argv[1]) == "ok")
+    if (argc == 2 && argv[1] == "ok"s)
     {
-        int line_count = 1;
+        size_t line_count = 1;
         string line;
         while (getline(cin, line))
         {

@@ -3,12 +3,6 @@
 
 using namespace std;
 
-enum ascii{
-	START_ALPHA = 97,
-	START_NUM = 48
-};
-
-
 int main(int argc, char *argv[])
 {
 
@@ -18,24 +12,20 @@ int main(int argc, char *argv[])
 
 	cout << number << ", displayed using radix " << base << " is: ";
 
-	while (true)
+	do
 	{
 		size_t remainder = number % base;	//Get the value of the next digit
 
 		//Set remainder to the corrosponding ASCII symbol
-		if (remainder > 9)								
-			remainder = START_ALPHA + remainder - 10;	
-		else																				
-			remainder += START_NUM;	
+		remainder = (remainder > 9 ? 'a' + remainder - 10 : remainder + '0');
 
 		outcome.insert(outcome.begin(), char(remainder));	
 		//Prepend character to the outcome
 
 		number /= base;						//Reduce the number for the next digit
 
-		if (number == 0)					//If the program is done
-			break;									//Exit the loop
 	}
+	while(number != 0);
 
 	cout << outcome << '\n';
 
