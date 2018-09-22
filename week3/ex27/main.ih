@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+#include <array>
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+using namespace std;
+
+extern size_t nTotal;
+extern size_t nRequired;
+
+void combis(int idx, bool bits[]);
+void show(bool bits[]);
+void data(size_t total, size_t required);
+size_t countSelected(bool bits[]);
+
