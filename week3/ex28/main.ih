@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+using namespace std;
+
+size_t lookupSqrt(size_t num);
+size_t estimateB(size_t outcome, size_t aTerm);
+size_t nextSqrt(size_t val, size_t estSqrt);
+size_t sqrtGn(size_t outcome);
