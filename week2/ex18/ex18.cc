@@ -26,10 +26,10 @@ int main()
 
         if (line == "ret") return 0;
 
-        //convert the command to a number in base 36, base 36 because the highest
-        //  single digit number is then 'z'.
         int value = stoi(line.substr(line.find(' ') + 1));
 
+        //convert the command to a number in base 36, base 36 because the highest
+        //  single digit number is then 'z'.
         switch (stoul(line.substr(0, line.find(' ')), 0, 36))
         {
             case STO:
