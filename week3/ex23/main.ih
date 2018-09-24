@@ -13,4 +13,5 @@ void usage(std::string const &progname);
 
 using namespace std;
 
-void quicksort(string elements[], int left, int right);
+string str_to_lower(string original);
+void quicksort(string elements[], size_t left, size_t right);
