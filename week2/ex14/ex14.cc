@@ -29,7 +29,7 @@ int main(int argc, char **argv)
         const string& lastWord = sentence.substr(lastWordStart + 1, lastWordEnd - lastWordStart);
         sentence.replace(firstWordStart, firstWordEnd - firstWordStart, lastWord);
 
-        cout << sentence << endl;
+        cout << sentence << "\n";
     }
 
 }
