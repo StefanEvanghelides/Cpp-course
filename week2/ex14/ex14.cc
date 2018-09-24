@@ -12,13 +12,17 @@ int main(int argc, char **argv)
     {	
         // Find the first word, regarding preceding whitespace
         size_t firstWordStart = sentence.find_first_not_of(whiteCharacters);
-        size_t firstWordEnd = sentence.find_first_of(whiteCharacters, firstWordStart);
+        size_t firstWordEnd = sentence.find_first_of(
+                                  whiteCharacters, firstWordStart
+                              );
 
         // Find the last word, regarding trailing whitespace
         size_t lastWordEnd = sentence.find_last_not_of(whiteCharacters);
-        size_t lastWordStart = sentence.find_last_of(whiteCharacters, lastWordEnd);
+        size_t lastWordStart = sentence.find_last_of(
+                                   whiteCharacters, lastWordEnd
+                               );
         
-        // check for empty or single-word strings, dont modify anything and continue.
+        // check for empty or single-word strings.
         if (firstWordStart == lastWordStart || firstWordStart == string::npos)
         {
             cout << sentence << "\n";
@@ -26,8 +30,13 @@ int main(int argc, char **argv)
         }
 
         //replace the first word by the last word.
-        const string& lastWord = sentence.substr(lastWordStart + 1, lastWordEnd - lastWordStart);
-        sentence.replace(firstWordStart, firstWordEnd - firstWordStart, lastWord);
+        const string& lastWord = sentence.substr(
+                                     lastWordStart + 1,
+                                     lastWordEnd - lastWordStart
+                                 );
+        sentence.replace(
+            firstWordStart, firstWordEnd - firstWordStart, lastWord
+        );
 
         cout << sentence << "\n";
     }
