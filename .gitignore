@@ -39,3 +39,6 @@ makefile
 
 # icm tmp folder
 **/tmp/
+
+#vscode workspace settings
+**/.vscode/

@@ -10,4 +10,7 @@ namespace Icmbuild
 
 void usage(std::string const &progname);
 
+
 using namespace std;
+
+void quicksort(string elements[], int left, int right);
