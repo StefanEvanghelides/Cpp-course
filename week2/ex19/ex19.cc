@@ -19,8 +19,8 @@ int main(int argc, char *argv[])
 		//Set remainder to the corrosponding ASCII symbol
 		remainder = (remainder > 9 ? 'a' + remainder - 10 : remainder + '0');
 
-		outcome.insert(outcome.begin(), char(remainder));	
 		//Prepend character to the outcome
+		outcome.insert(outcome.begin(), char(remainder));	
 
 		number /= base;						//Reduce the number for the next digit
 
