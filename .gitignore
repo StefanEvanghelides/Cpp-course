@@ -33,6 +33,7 @@
 
 # Executable from Stefan
 RUN
+.ini
 
 # The makefile
 makefile
