@@ -33,7 +33,7 @@
 
 # Executable from Stefan
 RUN
-.ini
+*.ini
 
 # The makefile
 makefile
