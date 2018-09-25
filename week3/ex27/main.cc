@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 try
 {
-	data(stoul(argv[1]),stoul(argv[2])); 
+	data(stoul(argv[1]), stoul(argv[2])); 
 	//Set the global variables for total and required arguments
 
 	bool bits[nRequired];

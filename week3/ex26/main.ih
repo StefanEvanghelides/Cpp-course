@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
-#include <sstream>
 
 namespace Icmbuild
 {
@@ -18,10 +16,13 @@ enum inputVal{
 
 using namespace std;
 
+void preprocess(string &input);
+size_t count(string input);
 void readInput(uint8_t *bits, string input);
 void setBits(uint8_t *bits, char value, size_t index);
 void show(uint8_t *bits, size_t len);
 size_t getField(uint8_t *bits, size_t index);
+
 
 
 

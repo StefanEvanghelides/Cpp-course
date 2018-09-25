@@ -37,3 +37,9 @@ RUN
 
 # The makefile
 makefile
+
+# icm tmp folder
+**/tmp/
+
+#vscode workspace settings
+**/.vscode/
