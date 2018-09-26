@@ -11,5 +11,8 @@ void insertPerson(string &ferry, size_t number)
 	if (firstBlue == string::npos)
 		ferry += eyecolors[rand() % 2] + " (" + to_string(number) + ")\n";
 	else
-		ferry.insert(firstBlue, eyecolors[rand() % 2] + " (" + to_string(number) + ")\n");
+		ferry.insert(
+			firstBlue, 
+			eyecolors[rand() % 2] + " (" + to_string(number) + ")\n"
+		);
 }

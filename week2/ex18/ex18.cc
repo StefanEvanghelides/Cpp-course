@@ -22,7 +22,12 @@ int main()
     {
         std::cout << "> ";
         string line;
-        getline(cin, line);
+        
+        if (!getline(cin, line))
+        {
+            cout << "Error reading input!\n";
+            return 1;
+        }
 
         if (line == "ret") return 0;
 

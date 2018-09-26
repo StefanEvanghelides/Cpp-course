@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		number /= base;						//Reduce the number for the next digit
 
 	}
-	while(number != 0);
+	while (number != 0);
 
 	cout << outcome << '\n';
 

@@ -25,11 +25,11 @@ void readInput(uint8_t *bits, string input)
 			case 'b':
 			case 'B':
 				setBits(bits, B, index++);
-				break;
+			break;
 			case 's':
 			case 'S':
 				setBits(bits, S, index++);
-				break;
+			break;
 			default:
 				setBits(bits, E, index++);
 		}

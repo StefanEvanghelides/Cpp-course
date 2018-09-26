@@ -9,7 +9,7 @@ ReturnValues combine(int argc, char **argv)
 	combination.nr = reqNr;
 
 	if (combination.ok)
-		combination.value = argv[reqNr-1];
+		combination.value = argv[reqNr - 1];
 	else
 		combination.value = "";
 
