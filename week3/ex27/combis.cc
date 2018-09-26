@@ -2,7 +2,7 @@
 
 void combis(int idx, bool bits[])
 {
-	size_t nSelected = countSelected(bits);
+	size_t nSelected = countSelected(bits); //count selected bits
 
 	if (nSelected - 1 < nRequired or size_t(idx) == nTotal)
 		return;

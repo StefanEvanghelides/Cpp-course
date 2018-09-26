@@ -7,9 +7,9 @@ size_t count(string input)
 
 	while (true)
 	{
-		idx = input.find(',', idx + 1);
+		idx = input.find(',', idx + 1); //Determine idx next ,
 
-		if (idx == string::npos)
+		if (idx == string::npos)	//Break loop if no more ,
 			break;
 		++amount;
 	}
