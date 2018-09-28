@@ -2,34 +2,28 @@
 
 void quicksort(string elements[], size_t left, size_t right)
 {
-    size_t i = left;
-    size_t j = right;
+    size_t leftSlider = left;
+    size_t rightSlider = right;
     const string pivot = elements[left]; //Set pivot point
 
-    while (i <= j)
+    while (leftSlider <= rightSlider)
     {
         //Search for an element from the left that should be on the right
-        while (elements[i].compare(pivot) < 0) 
-            i++;
+        while (compareNoCase(elements[leftSlider], pivot) < 0) 
+            ++leftSlider;
 
         //Search for an element from the right that should be on the left
-        while (elements[j].compare(pivot) > 0)
-            j--;
+        while (compareNoCase(elements[rightSlider], pivot) > 0)
+            rightSlider--;
 
         //Swap the elements if they are on the wrong side of the pivot
-        if (i <= j)
+        if (leftSlider <= rightSlider)
         {
-            elements[i].swap(elements[j]);
-            i++;
-            j--;
+            elements[leftSlider].swap(elements[rightSlider]);
+            ++leftSlider;
+            --rightSlider;
         }
     }
 
-    //Sort the left side if needed
-    if (left < j)
-        quicksort(elements, left, j);
-
-    //Sort the right side if needed
-    if (i < right)
-        quicksort(elements, i, right);
+    separate(elements, left, leftSlider, right, rightSlider);
 }

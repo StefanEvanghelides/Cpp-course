@@ -14,5 +14,12 @@ using namespace std;
 
 extern char** environ;
 
-string str_to_lower(string original);
+int compareNoCase(string leftstr, string rightstr);
+size_t envarCount();
+void envarStringArray(size_t length, string envarStrings[]);
 void quicksort(string elements[], size_t left, size_t right);
+void separate(
+    string elements[],
+    size_t left, size_t leftSlider,
+    size_t right, size_t Righslider
+);

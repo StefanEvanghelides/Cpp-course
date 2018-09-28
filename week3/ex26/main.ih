@@ -8,10 +8,16 @@ namespace Icmbuild
     extern char author[];
 };
 
-enum inputVal{
+enum InputVal
+{
 	B = 1,
 	S = 2,
 	E = 3
+};
+
+enum Constants
+{
+    BYTECAPACITY = 4
 };
 
 using namespace std;
