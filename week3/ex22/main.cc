@@ -1,7 +1,6 @@
 #include "main.ih"
 
 int main(int argc, char **argv)
-try
 {
     if (argc != 2)
     {
@@ -9,16 +8,22 @@ try
         return 0;
     }
 
-    if (argv[1] == "-c"s)
-        count_characters();
-    else if (argv[1] == "-w"s)
-        count_words();
-    else if (argv[1] == "-l"s)
-        count_lines();
-    else
-        usage("wc");
-}
-catch (...)
-{
-    return 1;
+    switch(argv[1][1])
+    {
+        case 'c':
+            count_characters();
+        break;
+
+        case 'w':
+            count_words();
+        break;
+
+        case 'l':
+            count_lines();
+        break;
+
+        default:
+            usage("wc");
+        break;
+    }
 }

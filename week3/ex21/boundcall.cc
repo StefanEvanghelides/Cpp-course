@@ -2,8 +2,8 @@
 
 void boundCall(int argc, char **argv)
 {
-	ReturnValues &&result = combine(argc , argv);
+	auto [ok, nr, value] = combine(argc , argv);
 
-	if (result.ok)
-		cout << result.nr << ' ' << result.value << '\n';
+	if (ok)
+		cout << nr << ' ' << value << '\n';
 }

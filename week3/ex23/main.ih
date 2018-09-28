@@ -10,8 +10,9 @@ namespace Icmbuild
 
 void usage(std::string const &progname);
 
-
 using namespace std;
+
+extern char** environ;
 
 string str_to_lower(string original);
 void quicksort(string elements[], size_t left, size_t right);
