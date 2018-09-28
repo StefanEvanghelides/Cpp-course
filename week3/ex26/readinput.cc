@@ -6,12 +6,12 @@ void readInput(uint8_t *bits, string input)
 	size_t leftIdx = 0;
 	size_t rightIdx = 0;
 	
-	while (true) //Get next substr upto either EOF or next ','
+	while (true)
 	{
 		leftIdx = rightIdx;
-		rightIdx = input.find(',', leftIdx + 1);
+		rightIdx = input.find(',', leftIdx + 1); //Determine idx of the next ,
 
-		if (rightIdx == string::npos)
+		if (rightIdx == string::npos) //If no , is found end the loop
 			break;
 
 		if (rightIdx - leftIdx > 2) //If input is to long

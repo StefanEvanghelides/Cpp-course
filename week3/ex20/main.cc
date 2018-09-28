@@ -4,16 +4,16 @@ int main(int argc, char **argv)
 {	
 	for (int idx = 1; idx != argc ; ++idx)
 	{
-		if (string{argv[idx]}.find('.') != string::npos)
+		if (string{argv[idx]}.find('.') != string::npos) //Check for a . in argv
 		{	
-			double inputVal[argc - 1];
+			double inputVal[argc - 1];	
 			
 			for (int idx = 1; idx != argc ; ++idx)
 			{
-				inputVal[idx - 1] = stod(argv[idx]);
+				inputVal[idx - 1] = stod(argv[idx]); //Convert input to double
 			}
 
-			cout << sum(inputVal, argc - 1) << '\n' << '\n';
+			cout << sum(inputVal, argc - 1) << '\n';
 			return 0;
 		}
 	}
@@ -22,11 +22,8 @@ int main(int argc, char **argv)
 
 	for (int idx = 1; idx != argc ; ++idx)
 	{
-		inputVal[idx - 1] = stoi(argv[idx]);
+		inputVal[idx - 1] = stoi(argv[idx]); //Convert input to int
 	}
 
-
-
-	//return int
 	cout << sum(inputVal, argc - 1) << '\n';
 }
