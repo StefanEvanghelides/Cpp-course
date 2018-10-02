@@ -2,17 +2,14 @@
 
 ReturnValues combine(int argc, char **argv)
 {
-	int reqNr = stoi(argv[1]); //Convert requestnr to int
+	size_t reqNr = stoi(argv[1]);
 
 	ReturnValues combination;
-	combination.ok = reqNr < argc;	//Determine whether requestnr exists 
-									//and store result
+	combination.ok = reqNr <= static_cast<size_t>(argc);
 	combination.nr = reqNr;
 
 	if (combination.ok)
 		combination.value = argv[reqNr - 1];
-	else
-		combination.value = "";
 
 	return combination;
 }

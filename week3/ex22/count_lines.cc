@@ -6,7 +6,7 @@ void count_lines()
     
     string buffer;
     while (getline(cin, buffer))
-        count += 1;
+        ++count;
 
     cout << "Read " << count << " lines.\n";
 }

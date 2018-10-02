@@ -6,7 +6,7 @@ void count_words()
 
     string buffer;
     while (cin >> buffer)
-        count += 1;
+        ++count;
 
     cout << "Read " << count << " words.\n";
 }

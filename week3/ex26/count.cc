@@ -1,6 +1,6 @@
 #include "main.ih"
 
-size_t count(string input)
+size_t count(const string &input)
 {
 	size_t amount = 0;
 	size_t idx = 0;

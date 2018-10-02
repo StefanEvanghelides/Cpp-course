@@ -168,3 +168,5 @@
 
 
 
+
+#define DEFCOM     "program"

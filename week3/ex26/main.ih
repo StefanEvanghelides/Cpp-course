@@ -8,16 +8,16 @@ namespace Icmbuild
     extern char author[];
 };
 
-enum inputVal{
-	B = 1,
-	S = 2,
-	E = 3
+enum Constants
+{
+    VALUEWIDTH = 2,
+    BYTECAPACITY = 4
 };
 
 using namespace std;
 
 void preprocess(string &input);
-size_t count(string input);
+size_t count(const string &input);
 void readInput(uint8_t *bits, string input);
 void setBits(uint8_t *bits, char value, size_t index);
 void show(uint8_t *bits, size_t len);

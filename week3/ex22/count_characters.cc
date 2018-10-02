@@ -4,9 +4,8 @@ void count_characters()
 {
     size_t count = 0;
     
-    char buffer;
-    while (cin.get(buffer))
-        count += 1;
+    while (cin.get() != char_traits<char>::eof())
+        ++count;
 
     cout << "Read " << count << " characters.\n";
 }

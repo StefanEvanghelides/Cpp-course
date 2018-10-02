@@ -1,7 +1,6 @@
 #include "main.ih"
 
 int main(int argc, char **argv)
-try
 {	
 	for (int idx = 1; idx != argc ; ++idx)
 	{
@@ -27,8 +26,4 @@ try
 	}
 
 	cout << sum(inputVal, argc - 1) << '\n';
-}
-catch (...)
-{
-    return 1;
 }

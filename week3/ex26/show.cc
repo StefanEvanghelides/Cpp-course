@@ -4,20 +4,16 @@ void show(uint8_t *bits, size_t len)
 {
 	for (size_t idx = 0; idx != len; ++idx)
 	{
-		switch (getField(bits, idx))
-		{
-			case B:
-				cout << 'B';
-			break;
-			case S:
-				cout << 'S';
-			break;
-			case E:
-				cout << 'E';
-			break;
-		}
+		char toPrint = getField(bits, idx);
 
-		cout << ',';
+		if (toPrint == 1)
+			toPrint = 'B';
+		else if (toPrint == 2)
+			toPrint = 'S';
+		else
+			toPrint = 'E';
+
+		cout << toPrint << ',';
 	}
 	cout << '\n';
 }

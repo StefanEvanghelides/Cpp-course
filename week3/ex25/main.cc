@@ -1,16 +1,13 @@
 #include "main.ih"
 
 int main(int argc, char **argv)
-try
 {
-	string ferry = "";
-	size_t size = stoul(argv[1]);
+	string ferry;
 
-	fillFerry(ferry, size);
+	if(argc == 3)
+		srandom(stoul(argv[2]));
+
+	fillFerry(ferry, stoul(argv[1]));
 
 	cout << ferry;
-}
-catch (...)
-{
-    return 1;
 }

@@ -35,9 +35,6 @@
 RUN
 *.ini
 
-# The makefile
-makefile
-
 # icm tmp folder
 **/tmp/
 
