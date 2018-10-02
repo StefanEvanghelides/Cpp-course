@@ -16,22 +16,23 @@ void readInput(uint8_t *bits, string input)
 
 		if (rightIdx - leftIdx > 2) //If input is to long
 		{
-			setBits(bits, E, index++);
+			setBits(bits, 3, index++);
 			continue;
 		}
 
-		switch(input[rightIdx - 1])
+		switch (input[rightIdx - 1])
 		{
 			case 'b':
 			case 'B':
-				setBits(bits, B, index++);
+				setBits(bits, 1, index);
 			break;
 			case 's':
 			case 'S':
-				setBits(bits, S, index++);
+				setBits(bits, 2, index);
 			break;
 			default:
-				setBits(bits, E, index++);
+				setBits(bits, 3, index);
 		}
+		++index;
 	}
 }
