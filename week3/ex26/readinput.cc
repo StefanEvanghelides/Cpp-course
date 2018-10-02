@@ -20,7 +20,7 @@ void readInput(uint8_t *bits, string input)
 			continue;
 		}
 
-		switch(input[rightIdx - 1])
+		switch (input[rightIdx - 1])
 		{
 			case 'b':
 			case 'B':

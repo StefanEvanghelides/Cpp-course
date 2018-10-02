@@ -8,13 +8,13 @@ void show(uint8_t *bits, size_t len)
 		{
 			case B:
 				cout << 'B';
-				break;
+			break;
 			case S:
 				cout << 'S';
-				break;
+			break;
 			case E:
 				cout << 'E';
-				break;
+			break;
 		}
 
 		cout << ',';
